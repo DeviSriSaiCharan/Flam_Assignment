@@ -20,6 +20,7 @@ export default function Home() {
         const e = await fetchEmployees();
         setEmployees(e);
       }
+      console.log(employees);
     }
 
     getEmployees();

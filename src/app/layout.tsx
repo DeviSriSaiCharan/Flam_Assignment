@@ -29,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body
         className={``}
+        suppressHydrationWarning={true}
       >
           <SidebarProvider>
             <AppSidebar />
