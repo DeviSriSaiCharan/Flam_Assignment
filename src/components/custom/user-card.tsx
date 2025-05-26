@@ -13,15 +13,15 @@ export function Usercard({user}: {user: Employee}): JSX.Element{
 
     return (
         <div className="flex flex-col gap-3 rounded-xl p-6 border hover:border-lime-400/30 hover:shadow-lg hover:shadow-lime-400/20" >
-            <div className="flex gap-3 items-center">
+            <div className="flex justify-between items-center">
                 <Image className={`rounded-full hover:border hover:border-lime-400`} src={user.image} alt="Profile Image" width={55} height={10}/>
                 <div>
                     <p>{user.firstName + " " + user.lastName}</p>
                 </div>
                 <Button 
                 onClick={() => toggleBookmark(user.id)}
-                title="" icon={<Bookmark/>} 
-                className={`hover:bg-lime-500/30 hover:border-lime-900 ${bookmarkedIds.includes(user.id) && "bg-lime-500/30"}`} />
+                title="" icon={<Bookmark className={`w-4 h-4 ${bookmarkedIds.includes(user.id) && "fill-green-400"} `} />} 
+                className={`flex items-center justify-center hover:text-green-400 hover:bg-lime-400/20 hover:border-lime-900 ${bookmarkedIds.includes(user.id) && " text-green-400"}`} />
             </div>
             <div>
                 <p className="text-sm text-muted-foreground flex gap-2">

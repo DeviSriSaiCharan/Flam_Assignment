@@ -28,8 +28,15 @@ export function DropdownFilter<T extends string | number>({
 }: DropdownParams<T>): JSX.Element {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center justify-center">
-        <Button className="" title={title} icon={<Filter className="w-4 h-4" />} />
+      <DropdownMenuTrigger className="flex items-center justify-center border rounded-lg px-2">
+        <Button className="border-none" title={title} icon={<Filter className="w-4 h-4" />} />
+        {
+          state.length > 0 && (
+            <span className="flex items-center justify-center w-5 h-5 text-sm text-lime-400 font-medium bg-lime-400/20 border-lime-900 border rounded-full">
+              {state.length}
+            </span>
+          )
+        }
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>{text}</DropdownMenuLabel>

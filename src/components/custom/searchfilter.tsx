@@ -39,7 +39,7 @@ export function SearchFilter(): JSX.Element{
                     <DropdownFilter state={selectedRatings} setState={setSelectedRatings} title="Ratings" text="Filter by Rating" items={ratings} />
                     {
                         hasFilters &&
-                        <Button onClick={clearFilter} className="" title="Clear" icon={<Trash2 className="w-4 h-4" />} />
+                        <Button onClick={clearFilter} className="hover:text-red-500/80 hover:border hover:border-red-400/80" title="Clear" icon={<Trash2 className="w-4 h-4" />} />
                     }
                 </div>
             </div>
