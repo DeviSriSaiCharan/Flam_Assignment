@@ -4,6 +4,7 @@ import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/custom/app-sidebar"
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,6 +34,7 @@ export default function RootLayout({
               <main className="flex-1 overflow-auto p-4">{children}</main>
             </SidebarInset>
           </SidebarProvider>
+          <Analytics />
       </body>
     </html>
   );
