@@ -1,11 +1,12 @@
 import axios from "axios";
+import { Employee } from "./store";
 
 export async function fetchEmployees(){
     try{
         const response = await axios.get("https://dummyjson.com/users?limit=20");
         const data = await response.data;
 
-        const employee = data.users.map((user: any) => ({
+        const employee = data.users.map((user: Employee) => ({
             id : user.id,
             firstName : user.firstName,
             lastName: user.lastName,

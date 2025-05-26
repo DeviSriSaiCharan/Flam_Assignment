@@ -1,11 +1,10 @@
 "use client"
 
 import { SearchFilter } from "@/components/custom/searchfilter";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Usercard } from "@/components/custom/user-card";
 import { Employee, useEmployeeStore } from "@/lib/store";
 import { fetchEmployees } from "@/lib/api";
-import axios from "axios";
 import { useSearch } from "@/hooks/use-search";
 
 

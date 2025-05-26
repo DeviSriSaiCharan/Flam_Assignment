@@ -1,6 +1,6 @@
 "use client"
 
-import { JSX, useState } from "react";
+import { JSX } from "react";
 import { Input } from "@/components/ui/input";
 import { DropdownFilter } from "./dropdown-filter";
 import { useEmployeeStore } from "@/lib/store";

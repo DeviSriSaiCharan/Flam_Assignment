@@ -1,7 +1,7 @@
 "use client"
 
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup,SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar"
-import { BarChart3, Bookmark, Home, LucideProps } from "lucide-react"
+import { BarChart3, Bookmark, Home } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 

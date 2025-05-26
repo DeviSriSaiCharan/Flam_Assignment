@@ -138,7 +138,7 @@ export default function EmployeePage() {
                             <div className="space-y-4">
                                 {employee.feedback.map((feedback, index) => (
                                   <div
-                                    key={index}
+                                    key={feedback}
                                     className="p-4 rounded-lg bg-muted/50 border border-border/40"
                                   >
                                     <p className="text-sm font-medium leading-relaxed">{feedback}</p>

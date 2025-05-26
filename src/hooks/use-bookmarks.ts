@@ -1,7 +1,7 @@
 
 import { Employee, useEmployeeStore } from "@/lib/store";
 
-export function useBookmarks(id: number){
+export function useBookmarks(){
     const {employees, bookmarkedIds, setBookmarkedIds} = useEmployeeStore();
 
     function toggleBookmark(id: number) {

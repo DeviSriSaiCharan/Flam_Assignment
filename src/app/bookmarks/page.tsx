@@ -2,7 +2,7 @@
 
 import { Usercard } from "@/components/custom/user-card";
 import { Employee, useEmployeeStore } from "@/lib/store";
-import { useEffect } from "react";
+
 
 export default function BookmarksPage() {
 
