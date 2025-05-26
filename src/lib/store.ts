@@ -33,11 +33,10 @@ export interface EmployeeStore {
   selectedDepartments: string[]
   selectedRatings: number[]
   setEmployees: (employees: Employee[]) => void
-  toggleBookmark: (id: number) => void
+  setBookmarkedIds: (ids: number[]) => void
   setSearchQuery: (query: string) => void
   setSelectedDepartments: (departments: string[]) => void
   setSelectedRatings: (ratings: number[]) => void
-  // getFilteredEmployees: () => Employee[]
   getBookmarkedEmployees: () => Employee[]
 }
 
@@ -51,39 +50,14 @@ export const useEmployeeStore = create<EmployeeStore>()(
       selectedRatings: [],
 
       setEmployees: (employees) => set({ employees }),
-
-      toggleBookmark: (id) =>
-        set((state) => ({
-          bookmarkedIds: state.bookmarkedIds.includes(id)
-            ? state.bookmarkedIds.filter((bookmarkId) => bookmarkId !== id)
-            : [...state.bookmarkedIds, id],
-        })),
+      
+      setBookmarkedIds: (ids) => set({ bookmarkedIds: ids }),
 
       setSearchQuery: (query) => set({ searchQuery: query }),
 
       setSelectedDepartments: (departments) => set({ selectedDepartments: departments }),
 
       setSelectedRatings: (ratings) => set({ selectedRatings: ratings }),
-
-      // getFilteredEmployees: () => {
-      //   const { employees, searchQuery, selectedDepartments, selectedRatings } = get()
-
-      //   return employees.filter((employee) => {
-      //     const matchesSearch =
-      //       !searchQuery ||
-      //       employee.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      //       employee.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      //       employee.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      //       employee.company.department.toLowerCase().includes(searchQuery.toLowerCase())
-
-      //     const matchesDepartment =
-      //       selectedDepartments.length === 0 || selectedDepartments.includes(employee.company.department)
-
-      //     const matchesRating = selectedRatings.length === 0 || selectedRatings.includes(employee.rating)
-
-      //     return matchesSearch && matchesDepartment && matchesRating
-      //   })
-      // },
 
       getBookmarkedEmployees: () => {
         const { employees, bookmarkedIds } = get()
@@ -92,7 +66,10 @@ export const useEmployeeStore = create<EmployeeStore>()(
     }),
     {
       name: "employee-store",
-      partialize: (state) => ({ bookmarkedIds: state.bookmarkedIds }),
+      partialize: (state) => ({
+        employees: state.employees,
+        bookmarkedIds: state.bookmarkedIds
+      }),
     },
   ),
 )

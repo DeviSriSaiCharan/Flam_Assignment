@@ -9,7 +9,7 @@ type ButtonProps = {
 
 export function Button({title, icon, className = "", onClick}: ButtonProps): JSX.Element {
     return (
-        <button onClick={onClick} className={className + " rounded-lg flex items-center justify-center gap-2 border p-2 hover:border-lime-400"}>
+        <button onClick={onClick} className={className + " rounded-lg flex items-center justify-center gap-2 border p-2 cursor-pointer"}>
             {icon}
             <span>{title}</span>
         </button>

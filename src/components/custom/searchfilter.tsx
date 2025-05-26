@@ -9,7 +9,7 @@ import { Button } from "./button";
 import { Trash2 } from "lucide-react";
 import { useSearch } from "@/hooks/use-search";
 
-const departments: string[] = ["Engineering", "Marketing", "Sales", "HR", "Finance", "Operations", "Design"];
+const departments: string[] = ["Engineering", "Support", "Research and Development", "Human Resource", "Product Manager", "Marketing", "Accounting", "Services", "Training", "Legal"];
 const ratings: number[] = [1,2,3,4,5];
 
 
