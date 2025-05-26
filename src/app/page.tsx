@@ -1,17 +1,19 @@
 "use client"
 
 import { SearchFilter } from "@/components/custom/searchfilter";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Usercard } from "@/components/custom/user-card";
 import { Employee, useEmployeeStore } from "@/lib/store";
 import { fetchEmployees } from "@/lib/api";
 import { useSearch } from "@/hooks/use-search";
 import { Users, Bookmark, TrendingUp, Award } from "lucide-react";
+import { UserSkeleton } from "@/components/custom/user-skeleton";
 
 
 export default function Home() {
   const {employees, setEmployees, bookmarkedIds} = useEmployeeStore();
-  
+  const [loading, setLoading] = useState<boolean>(true);
+
   const {filteredEmployees} = useSearch();
   const items = [
     {
@@ -54,11 +56,11 @@ export default function Home() {
         const e = await fetchEmployees();
         setEmployees(e);
       }
-      console.log(employees);
+      setLoading(false);
     }
 
     getEmployees();
-  },[])
+  },[employees]);
 
   return (
     <div className="p-2 overflow-auto">
@@ -95,6 +97,13 @@ export default function Home() {
                 {
                   filteredEmployees.map((employee: Employee) => (
                     <Usercard user={employee} key={employee.id}/>
+                  ))
+                }
+
+                {
+                  loading && 
+                  [...Array(6)].map((_, i) => (
+                      <UserSkeleton key={i}/>
                   ))
                 }
               </div>
