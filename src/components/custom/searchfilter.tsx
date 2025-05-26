@@ -7,6 +7,7 @@ import { useEmployeeStore } from "@/lib/store";
 import { Badge } from "./badge";
 import { Button } from "./button";
 import { Trash2 } from "lucide-react";
+import { useSearch } from "@/hooks/use-search";
 
 const departments: string[] = ["Engineering", "Marketing", "Sales", "HR", "Finance", "Operations", "Design"];
 const ratings: number[] = [1,2,3,4,5];
@@ -14,7 +15,8 @@ const ratings: number[] = [1,2,3,4,5];
 
 export function SearchFilter(): JSX.Element{
 
-    const {searchQuery, setSearchQuery, selectedDepartments, selectedRatings, setSelectedDepartments, setSelectedRatings} = useEmployeeStore();
+    const {selectedDepartments, selectedRatings, setSelectedDepartments, setSelectedRatings} = useEmployeeStore();
+    const {searchQuery, setSearchQuery} = useSearch();
 
     const hasFilters: boolean = searchQuery.length>0 || selectedDepartments.length>0 || selectedRatings.length>0;
 
@@ -47,13 +49,13 @@ export function SearchFilter(): JSX.Element{
                     <Badge isQuery title={searchQuery} />
                 }
                 {
-                    selectedDepartments.map((department) => (
-                        <Badge title={department} isDept/>
+                    selectedDepartments.map((department, i) => (
+                        <Badge title={department} key={i} isDept/>
                     ))
                 }
                 {
-                    selectedRatings.map((rating) => (
-                        <Badge title={rating}/>
+                    selectedRatings.map((rating, i) => (
+                        <Badge title={rating} key={i}/>
                     ))
                 }
             </div>

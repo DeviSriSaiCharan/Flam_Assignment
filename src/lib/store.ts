@@ -26,7 +26,7 @@ export interface Employee {
   feedback: string[]
 }
 
-interface EmployeeStore {
+export interface EmployeeStore {
   employees: Employee[]
   bookmarkedIds: number[]
   searchQuery: string
@@ -37,7 +37,7 @@ interface EmployeeStore {
   setSearchQuery: (query: string) => void
   setSelectedDepartments: (departments: string[]) => void
   setSelectedRatings: (ratings: number[]) => void
-  getFilteredEmployees: () => Employee[]
+  // getFilteredEmployees: () => Employee[]
   getBookmarkedEmployees: () => Employee[]
 }
 
@@ -65,25 +65,25 @@ export const useEmployeeStore = create<EmployeeStore>()(
 
       setSelectedRatings: (ratings) => set({ selectedRatings: ratings }),
 
-      getFilteredEmployees: () => {
-        const { employees, searchQuery, selectedDepartments, selectedRatings } = get()
+      // getFilteredEmployees: () => {
+      //   const { employees, searchQuery, selectedDepartments, selectedRatings } = get()
 
-        return employees.filter((employee) => {
-          const matchesSearch =
-            !searchQuery ||
-            employee.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            employee.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            employee.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            employee.company.department.toLowerCase().includes(searchQuery.toLowerCase())
+      //   return employees.filter((employee) => {
+      //     const matchesSearch =
+      //       !searchQuery ||
+      //       employee.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      //       employee.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      //       employee.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      //       employee.company.department.toLowerCase().includes(searchQuery.toLowerCase())
 
-          const matchesDepartment =
-            selectedDepartments.length === 0 || selectedDepartments.includes(employee.company.department)
+      //     const matchesDepartment =
+      //       selectedDepartments.length === 0 || selectedDepartments.includes(employee.company.department)
 
-          const matchesRating = selectedRatings.length === 0 || selectedRatings.includes(employee.rating)
+      //     const matchesRating = selectedRatings.length === 0 || selectedRatings.includes(employee.rating)
 
-          return matchesSearch && matchesDepartment && matchesRating
-        })
-      },
+      //     return matchesSearch && matchesDepartment && matchesRating
+      //   })
+      // },
 
       getBookmarkedEmployees: () => {
         const { employees, bookmarkedIds } = get()

@@ -3,14 +3,16 @@
 import { SearchFilter } from "@/components/custom/searchfilter";
 import { useEffect, useState } from "react";
 import { Usercard } from "@/components/custom/user-card";
-import { useEmployeeStore } from "@/lib/store";
+import { Employee, useEmployeeStore } from "@/lib/store";
 import { fetchEmployees } from "@/lib/api";
 import axios from "axios";
+import { useSearch } from "@/hooks/use-search";
 
 
 export default function Home() {
-  const {employees, setEmployees, getFilteredEmployees, bookmarkedIds} = useEmployeeStore();
-  const filteredEmployees = getFilteredEmployees();
+  const {employees, setEmployees, bookmarkedIds} = useEmployeeStore();
+  
+  const {filteredEmployees} = useSearch();
 
   useEffect(() =>{
     async function getEmployees(){
@@ -38,14 +40,18 @@ export default function Home() {
             <div className="h-36 rounded-2xl w-1/4 bg-amber-400"></div>
         </div>
 
-        <div className="py-2">
+        <div className="py-2 ">
             <SearchFilter/>
-            <div className="p-1 grid grid-cols-3 gap-10">
-              <div>
-                <h2>Team Members ({filteredEmployees.length})</h2>
+            <div className="p-1">
+              <div className="mb-4">
+                <h2 className="font-semibold text-2xl" >Team Members ({filteredEmployees.length})</h2>
               </div>
-              <div>
-                
+              <div className="grid grid-cols-3 gap-6" >
+                {
+                  filteredEmployees.map((employee: Employee) => (
+                    <Usercard user={employee} key={employee.id}/>
+                  ))
+                }
               </div>
             </div>
 
