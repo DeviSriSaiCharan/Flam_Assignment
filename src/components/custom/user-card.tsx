@@ -9,7 +9,7 @@ import {useBookmarks} from "@/hooks/use-bookmarks"
 
 export function Usercard({user}: {user: Employee}): JSX.Element{
 
-    const {bookmarkedIds, toggleBookmark} = useBookmarks(user.id);
+    const {bookmarkedIds, toggleBookmark} = useBookmarks();
 
     return (
         <div className="flex flex-col gap-3 rounded-xl p-6 border hover:border-lime-400/30 hover:shadow-lg hover:shadow-lime-400/20" >
