@@ -56,6 +56,7 @@ export default function EmployeePage() {
                         {
                             [...Array(5)].map((_, i) => (
                                 <Star
+                                key={i}
                                 className={`w-4 ${i < employee.rating ? 'fill-amber-400 ' : 'text-gray-300'}`}
                                 />
                             ))
