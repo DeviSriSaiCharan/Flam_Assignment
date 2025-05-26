@@ -20,17 +20,35 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Feature Implemented
+- Proper state management (Context or Zustand)
+- Custom hooks (useBookmarks, useSearch)
+- Client-side and/or server-side data fetching
+- Reusable components (Badge, Button, Card)
+- Modular folder structure (components/, hooks/, lib/)
+- Search & Filtering
+- Dynamic User Details
 
-To learn more about Next.js, take a look at the following resources:
+## Pages
+- Dashboard (/)
+- Employee Details (/employee/[id])
+- Bookmark Manager (/bookmarks)
+- Analytics Dashboard (/analytics)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ### All images in outputImages folder
 
-## Deploy on Vercel
+  <img src="./outputImages\Screenshot 2025-05-26 154454.png" alt="Screenshot" width="400"/>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  <img src="./outputImages\Screenshot 2025-05-26 154507.png" />
+  <img src="./outputImages\Screenshot 2025-05-26 154533.png" />
+  <img src="./outputImages\Screenshot 2025-05-26 154507.png" />
+  <img src="./outputImages\Screenshot 2025-05-26 154607.png" />
+  <img src="./outputImages\Screenshot 2025-05-26 154625.png" />
+  <img src="./outputImages\Screenshot 2025-05-26 154630.png" />
+  <img src="./outputImages\Screenshot 2025-05-26 154507.png" />
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
