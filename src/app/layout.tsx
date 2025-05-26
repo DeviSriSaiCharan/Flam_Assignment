@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/custom/app-sidebar"
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"

@@ -124,7 +124,7 @@ export default function EmployeePage() {
                                 <div className="flex flex-col gap-2">
                                     {employee.projects.map((project, index) => (
                                       <div
-                                        key={project}
+                                        key={index}
                                         className="flex items-center gap-3 p-3 rounded-lg bg-muted/50 border border-border/40"
                                       >
                                         <div className="h-2 w-2 rounded-full bg-green-400" />
@@ -138,7 +138,7 @@ export default function EmployeePage() {
                             <div className="space-y-4">
                                 {employee.feedback.map((feedback, index) => (
                                   <div
-                                    key={feedback}
+                                    key={index}
                                     className="p-4 rounded-lg bg-muted/50 border border-border/40"
                                   >
                                     <p className="text-sm font-medium leading-relaxed">{feedback}</p>

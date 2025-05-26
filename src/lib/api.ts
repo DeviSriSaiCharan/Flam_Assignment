@@ -27,7 +27,7 @@ export async function fetchEmployees(){
 
         return employee;
     }
-    catch(e: any){
+    catch(e){
         console.log("Error fetching employee details " + e);
         return []
     }

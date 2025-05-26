@@ -9,7 +9,7 @@ import { useSearch } from "@/hooks/use-search";
 
 
 export default function Home() {
-  const {employees, setEmployees, bookmarkedIds} = useEmployeeStore();
+  const {employees, setEmployees} = useEmployeeStore();
   
   const {filteredEmployees} = useSearch();
 
