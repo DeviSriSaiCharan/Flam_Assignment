@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { JSX } from "react"
 import { Button } from "./button"
 import { Badge } from "./badge"

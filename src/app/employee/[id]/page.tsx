@@ -3,7 +3,6 @@
 import { useParams } from "next/navigation";
 import { Employee, useEmployeeStore } from "@/lib/store";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Badge } from "@/components/custom/badge";
 import { Star, Mail, MapPin,Calendar, Phone, Building, Bookmark } from "lucide-react";
 import { Button } from "@/components/custom/button";

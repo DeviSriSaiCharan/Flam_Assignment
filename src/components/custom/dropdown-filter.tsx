@@ -8,7 +8,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuCheckboxItem
 } from "@/components/ui/dropdown-menu";
-import { Button } from "./button";
 
 
 type DropdownParams<T extends string | number> = {
