@@ -30,7 +30,7 @@ export default function Home() {
     }
 
     getEmployees();
-  },[employees.length, setEmployees]);
+  },[hydrate, employees.length, setEmployees]);
 
   return (
     <div className="p-2 overflow-auto">
