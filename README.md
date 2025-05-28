@@ -21,13 +21,15 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Feature Implemented
-- Proper state management (Context or Zustand)
+- Proper state management (using Zustand) 
 - Custom hooks (useBookmarks, useSearch)
 - Client-side and/or server-side data fetching
 - Reusable components (Badge, Button, Card)
 - Modular folder structure (components/, hooks/, lib/)
-- Search & Filtering
+- Search by name, email, department & Filtering
 - Dynamic User Details
+- Loader using skeleton
+- Add Employee Feature
 
 ## Pages
 - Dashboard (/)

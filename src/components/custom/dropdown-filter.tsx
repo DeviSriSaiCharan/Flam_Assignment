@@ -29,7 +29,11 @@ export function DropdownFilter<T extends string | number>({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center justify-center border rounded-lg px-2">
-        <Button className="border-none" title={title} icon={<Filter className="w-4 h-4" />} />
+        {/* <Button className="border-none" title={title} icon={<Filter className="w-4 h-4" />} /> */}
+        <div className="flex items-center gap-2 justify-between w-full p-2">
+          <span className="" >{title}</span>
+          <Filter className="w-4 h-4" />
+        </div>
         {
           state.length > 0 && (
             <span className="flex items-center justify-center w-5 h-5 text-sm text-lime-400 font-medium bg-lime-400/20 border-lime-900 border rounded-full">

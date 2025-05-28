@@ -32,6 +32,7 @@ export interface EmployeeStore {
   searchQuery: string
   selectedDepartments: string[]
   selectedRatings: number[]
+  hydrate: boolean
   setEmployees: (employees: Employee[]) => void
   setBookmarkedIds: (ids: number[]) => void
   setSearchQuery: (query: string) => void
@@ -48,6 +49,7 @@ export const useEmployeeStore = create<EmployeeStore>()(
       searchQuery: "",
       selectedDepartments: [],
       selectedRatings: [],
+      hydrate: false,
 
       setEmployees: (employees) => set({ employees }),
       
@@ -70,6 +72,11 @@ export const useEmployeeStore = create<EmployeeStore>()(
         employees: state.employees,
         bookmarkedIds: state.bookmarkedIds
       }),
+      onRehydrateStorage: () => (state) => {
+        if (state) {
+          state.hydrate = true
+        }
+      }
     },
   ),
 )

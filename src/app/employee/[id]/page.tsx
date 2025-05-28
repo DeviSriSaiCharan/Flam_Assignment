@@ -41,7 +41,7 @@ export default function EmployeePage() {
             <div className="flex gap-4 h-11/12">
                 <div className="border rounded-lg p-4 w-1/3 h-full">
                     <div className="flex flex-col items-center mb-4">
-                        <Image
+                        <img
                             src={employee.image}
                             alt={`${employee.firstName} ${employee.lastName}`}
                             width={100}

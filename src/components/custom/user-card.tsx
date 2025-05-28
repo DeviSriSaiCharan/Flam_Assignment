@@ -14,7 +14,7 @@ export function Usercard({user}: {user: Employee}): JSX.Element{
     return (
         <div className="flex flex-col gap-3 rounded-xl p-6 border hover:border-lime-400/30 hover:shadow-lg hover:shadow-lime-400/20" >
             <div className="flex justify-between items-center">
-                <Image className={`rounded-full hover:border hover:border-lime-400`} src={user.image} alt="Profile Image" width={55} height={10}/>
+                <img className={`rounded-full hover:border hover:border-lime-400`} src={user.image} alt="Profile Image" width={55} height={10}/>
                 <div>
                     <p>{user.firstName + " " + user.lastName}</p>
                 </div>

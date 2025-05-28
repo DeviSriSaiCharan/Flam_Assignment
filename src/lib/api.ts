@@ -1,9 +1,12 @@
 import axios from "axios";
 import { Employee } from "./store";
 
-export async function fetchEmployees(){
+export async function fetchEmployees(page:number = 0): Promise<Employee[]> {
     try{
-        const response = await axios.get("https://dummyjson.com/users?limit=20");
+      const limit = 20;
+      const skip = page* limit;
+
+        const response = await axios.get(`https://dummyjson.com/users?limit=${limit}&skip=${skip}`);
         const data = await response.data;
 
         const employee = data.users.map((user: Employee) => ({
@@ -15,9 +18,9 @@ export async function fetchEmployees(){
             phone: user.phone,
             address: user.address,
             company: {
-              department: user.company?.department || "getDepartment()",
-              name: user.company?.name || "FlamApp Inc.",
-              title: user.company?.title || "getJobTitle()",
+              department: user.company?.department,
+              name: user.company?.name ,
+              title: user.company?.title ,
             },
             image: user.image,
             rating: Math.floor(Math.random() * 5) + 1, // Random rating 1-5
